@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Weather</string>
+    <string name="app_name">WEATHER</string>
     <string name="greeting">Good day!</string>
     <string name="helloer">Friend</string>
     <string name="morning">Good morning</string>
