@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
                     textView4.setText("20 градусов");
                     textView6.setText("без осадков");
                 }
-
             }
         });
     }
