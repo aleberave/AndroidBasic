@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 textView2.setText(String.valueOf(editText1.getText()));
                 editText1.setText("");
+                textView4.setText("");
             }
         });
     }
