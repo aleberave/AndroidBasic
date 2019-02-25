@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Lesson3HW</string>
+    <string name="writeNameTown">Введите название города</string>
+    <string name="search">поиск</string>
+    <string name="temperature">Температура</string>
+    <string name="temperature_degrees">℃</string>
+    <string name="wind">Скорость ветра</string>
+    <string name="wind_speed">м/с</string>
+    <string name="atmosphere_pressure">Атмосфетное давление</string>
+    <string name="atmosphere_pressure_measure">мм.рт.ст.</string>
+    <string name="printNameTown">Город</string>
+    <string name="backToActivityOne">Новый поиск</string>
+</resources>
