@@ -28,7 +28,7 @@ public class StartSecondActivity implements View.OnClickListener {
             parsel.checkBoxWind = CitiesListFragment.CBW;
             parsel.switchAtmospherePressure = CitiesListFragment.SAP;
 
-            Intent intent = new Intent(v.getContext(), Second2Activity.class);
+            Intent intent = new Intent(v.getContext(), SecondActivity.class);
             intent.putExtra(TEXT, parsel);
 
             sourceActivity.startActivityForResult(intent, CitiesListFragment.REQUEST_CODE);
