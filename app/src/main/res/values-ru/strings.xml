@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Урок5ДЗ</string>
+    <string name="writeNameTown">Введите название города</string>
+    <string name="search">поиск</string>
+    <string name="temperature">Температура</string>
+    <string name="temperature_degrees">℃</string>
+    <string name="wind">Скорость ветра</string>
+    <string name="wind_speed">м/с</string>
+    <string name="atmosphere_pressure">Атмосфетное давление</string>
+    <string name="atmosphere_pressure_measure">мм.рт.ст.</string>
+    <string name="printNameTown">Город</string>
+    <string name="backToActivityOne">Новый поиск</string>
+
+    <string-array name="arrayCitiesList">
+        <item>Москва</item>
+        <item>Санкт-Петербург</item>
+        <item>Самара</item>
+        <item>Хабаровск</item>
+        <item>Владивосток</item>
+    </string-array>
+</resources>

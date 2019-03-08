@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Lesson5HW</string>
+    <string name="writeNameTown">Enter the name of the city</string>
+    <string name="search">search</string>
+    <string name="temperature">Temperature</string>
+    <string name="temperature_degrees">℃</string>
+    <string name="wind">Wind speed</string>
+    <string name="wind_speed">m/s</string>
+    <string name="atmosphere_pressure">Atmosphere pressure</string>
+    <string name="atmosphere_pressure_measure">mmHg.</string>
+    <string name="printNameTown">City</string>
+    <string name="backToActivityOne">New search</string>
+
+    <string-array name="arrayCitiesList">
+        <item>Moscow</item>
+        <item>Saint-Peterburg</item>
+        <item>Samara</item>
+        <item>Khabarovsk</item>
+        <item>Vladivostok</item>
+    </string-array>
+</resources>
