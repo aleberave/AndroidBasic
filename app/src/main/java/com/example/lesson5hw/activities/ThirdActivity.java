@@ -5,15 +5,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.lesson5hw.R;
+import com.example.lesson5hw.fragments.Parsel;
+import com.example.lesson5hw.fragments.StartSecondActivity;
 import com.example.lesson5hw.recycle.DataSourceBuilder;
 import com.example.lesson5hw.recycle.Soc;
 import com.example.lesson5hw.recycle.SocnetAdapter;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ThirdActivity extends AppCompatActivity {
@@ -43,6 +48,31 @@ public class ThirdActivity extends AppCompatActivity {
         final SocnetAdapter adapter = new SocnetAdapter(dataSource);
         recyclerView.setAdapter(adapter);
 
+//        Parsel parsel = getIntent().getExtras().getParcelable(StartSecondActivity.TEXT);
+//        // Добавим элемент в 0-ю позицию
+//        dataSource.add(0, new Soc(parsel.text,
+//                R.drawable.icon1_weather, true));
+//        // Дадим инструкцию адаптеру, что данные изменились
+//        adapter.notifyDataSetChanged();
+
+        ArrayList<String> arrayList = getIntent().getStringArrayListExtra(StartSecondActivity.THIRD);
+        if(arrayList.size() > 0){
+            for (int i = 0; i < arrayList.size(); i++) {
+                dataSource.add(0, new Soc(arrayList.get(i),
+                        R.drawable.icon1_weather, true));
+                adapter.notifyDataSetChanged();
+            }
+        }
+
+//        String[] array = getIntent().getStringArrayExtra(StartSecondActivity.THIRD);
+//        if(array.length > 0){
+//            for (int i = 0; i < array.length; i++) {
+//                dataSource.add(0, new Soc(array[i],
+//                        R.drawable.icon1_weather, true));
+//                adapter.notifyDataSetChanged();
+//            }
+//        }
+
         // установить слушателя
         adapter.SetOnItemClickListener(new SocnetAdapter.OnItemClickListener() {
             @Override
@@ -52,12 +82,5 @@ public class ThirdActivity extends AppCompatActivity {
             }
         });
 
-        Button buttonNewSearch = findViewById(R.id.buttonNewSearch);
-        buttonNewSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
     }
 }

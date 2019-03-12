@@ -36,6 +36,7 @@ public class CitiesListFragment extends Fragment {
     private Switch switchAtmospherePressure;
     private Button buttonSearch;
     private Button buttonStorySearch;
+    private StartSecondActivity startSecondActivity;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
@@ -84,7 +85,10 @@ public class CitiesListFragment extends Fragment {
                 onClickSwitch(v);
             }
         });
-        buttonSearch.setOnClickListener(new StartSecondActivity(getActivity()));
+        if (startSecondActivity == null){
+            startSecondActivity = new StartSecondActivity(getActivity());
+        }
+        buttonSearch.setOnClickListener(startSecondActivity);
         buttonStorySearch.setOnClickListener(listener);
     }
 
@@ -137,8 +141,12 @@ public class CitiesListFragment extends Fragment {
     private final View.OnClickListener listener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(getActivity(), ThirdActivity.class);
-            startActivity(intent);
+            if (startSecondActivity == null){
+                startSecondActivity = new StartSecondActivity(getActivity());
+            } else {
+                startSecondActivity.onClickToThird(v);
+            }
+
         }
     };
 }
