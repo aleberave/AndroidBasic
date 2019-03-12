@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="pictures">
+        <item>@drawable/icon1_weather</item>
+        <item>@drawable/icon2_weather</item>
+        <item>@drawable/icon1_weather</item>
+        <item>@drawable/icon2_weather</item>
+        <item>@drawable/icon1_weather</item>
+        <item>@drawable/icon2_weather</item>
+        <item>@drawable/icon1_weather</item>
+    </array>
+</resources>

@@ -1,9 +1,12 @@
-package com.example.lesson5hw;
+package com.example.lesson5hw.activities;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+
+import com.example.lesson5hw.R;
+import com.example.lesson5hw.fragments.DataCityFragment;
 
 public class SecondActivity extends AppCompatActivity {
 

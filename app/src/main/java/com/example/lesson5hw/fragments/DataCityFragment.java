@@ -1,5 +1,6 @@
-package com.example.lesson5hw;
+package com.example.lesson5hw.fragments;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,9 +12,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.lesson5hw.R;
+
 public class DataCityFragment extends Fragment {
 
-    public static final String PARCEL = "parcel";
+    public static final String DATA = "data";
+
     public static final String TAG = DataCityFragment.class.getSimpleName();
 
     private TextView printNameTown;
@@ -47,7 +51,7 @@ public class DataCityFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Parsel parsel = (Parsel) getActivity().getIntent().getExtras().getSerializable(StartSecondActivity.TEXT);
+        Parsel parsel = getActivity().getIntent().getExtras().getParcelable(StartSecondActivity.TEXT);
 
         printNameTown.setText(getResources().getString(R.string.printNameTown) + ": " + parsel.text);
 
@@ -83,8 +87,10 @@ public class DataCityFragment extends Fragment {
                 intentResult.putExtra(CitiesListFragment.BOOL_CBT, parsel.checkBoxTemperature);
                 intentResult.putExtra(CitiesListFragment.BOOL_CBW, parsel.checkBoxWind);
                 intentResult.putExtra(CitiesListFragment.BOOL_SAP, parsel.switchAtmospherePressure);
-                getActivity().setResult(getActivity().RESULT_OK, intentResult);
-                getActivity().finish();
+                Bundle bundle = new Bundle();
+                bundle.putParcelable(DATA, intentResult);
+                ((Activity) view.getContext()).setResult(Activity.RESULT_OK, intentResult);
+                ((Activity) view.getContext()).finish();
                 break;
         }
     }

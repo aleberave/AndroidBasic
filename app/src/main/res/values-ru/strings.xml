@@ -11,11 +11,16 @@
     <string name="atmosphere_pressure_measure">мм.рт.ст.</string>
     <string name="printNameTown">Город</string>
     <string name="backToActivityOne">Новый поиск</string>
+    <string name="position">Позиция - %d</string>
+    <string name="item">Item</string>
+    <string name="storySearch">История поиска</string>
 
     <string-array name="arrayCitiesList">
         <item>Москва</item>
         <item>Санкт-Петербург</item>
         <item>Самара</item>
+        <item>Новосибирск</item>
+        <item>Омск</item>
         <item>Хабаровск</item>
         <item>Владивосток</item>
     </string-array>
