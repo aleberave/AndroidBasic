@@ -11,9 +11,7 @@ public class Parsel implements Parcelable {
     public boolean checkBoxWind;
     public boolean switchAtmospherePressure;
 
-    public Parsel() {
-
-    }
+    public Parsel() {}
 
     protected Parsel(Parcel in) {
         text = in.readString();

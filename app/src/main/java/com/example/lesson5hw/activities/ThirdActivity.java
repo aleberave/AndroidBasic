@@ -5,19 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.lesson5hw.R;
-import com.example.lesson5hw.fragments.Parsel;
 import com.example.lesson5hw.fragments.StartSecondActivity;
 import com.example.lesson5hw.recycle.DataSourceBuilder;
 import com.example.lesson5hw.recycle.Soc;
 import com.example.lesson5hw.recycle.SocnetAdapter;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,7 +52,7 @@ public class ThirdActivity extends AppCompatActivity {
 //        adapter.notifyDataSetChanged();
 
         ArrayList<String> arrayList = getIntent().getStringArrayListExtra(StartSecondActivity.THIRD);
-        if(arrayList.size() > 0){
+        if (arrayList.size() > 0) {
             for (int i = 0; i < arrayList.size(); i++) {
                 dataSource.add(0, new Soc(arrayList.get(i),
                         R.drawable.icon1_weather, true));
