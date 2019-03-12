@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.lesson5hw.R;
-import com.example.lesson5hw.recycle.DataSourceBuilder;
 
 public class DataCityFragment extends Fragment {
 
