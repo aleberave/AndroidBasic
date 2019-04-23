@@ -10,11 +10,16 @@
     <string name="atmosphere_pressure_measure">mmHg.</string>
     <string name="printNameTown">City</string>
     <string name="backToActivityOne">New search</string>
+    <string name="position">Position - %d</string>
+    <string name="item">Item</string>
+    <string name="storySearch">Story search</string>
 
     <string-array name="arrayCitiesList">
         <item>Moscow</item>
         <item>Saint-Peterburg</item>
         <item>Samara</item>
+        <item>Novosibirsk</item>
+        <item>Omsk</item>
         <item>Khabarovsk</item>
         <item>Vladivostok</item>
     </string-array>

@@ -1,4 +1,4 @@
-package com.example.lesson5hw;
+package com.example.lesson5hw.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,9 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Switch;
 
+import com.example.lesson5hw.R;
+import com.example.lesson5hw.activities.ThirdActivity;
+
 public class CitiesListFragment extends Fragment {
 
     public static final String TAG = CitiesListFragment.class.getSimpleName();
@@ -23,15 +26,17 @@ public class CitiesListFragment extends Fragment {
     public static final String BOOL_SAP = "bool_sap";
     public static final int REQUEST_CODE = 10;
 
-    public static boolean SAP = false;
-    public static boolean CBT = false;
-    public static boolean CBW = false;
+    public static boolean sap = false;
+    public static boolean cbt = false;
+    public static boolean cbw = false;
 
     private EditText editTextWriteNameTown;
     private CheckBox checkBoxTemperature;
     private CheckBox checkBoxWind;
     private Switch switchAtmospherePressure;
-    private Button button;
+    private Button buttonSearch;
+    private Button buttonStorySearch;
+    private StartSecondActivity startSecondActivity;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
@@ -44,7 +49,8 @@ public class CitiesListFragment extends Fragment {
         checkBoxTemperature = v.findViewById(R.id.checkBoxTemperature);
         checkBoxWind = v.findViewById(R.id.checkBoxWind);
         switchAtmospherePressure = v.findViewById(R.id.switchAtmospherePressure);
-        button = v.findViewById(R.id.buttonSearch);
+        buttonSearch = v.findViewById(R.id.buttonSearch);
+        buttonStorySearch = v.findViewById(R.id.buttonStorySearch);
         return v;
     }
 
@@ -79,20 +85,23 @@ public class CitiesListFragment extends Fragment {
                 onClickSwitch(v);
             }
         });
-        button.setOnClickListener(new StartSecondActivity(getActivity()));
+        if (startSecondActivity == null){
+            startSecondActivity = new StartSecondActivity(getActivity());
+        }
+        buttonSearch.setOnClickListener(startSecondActivity);
+        buttonStorySearch.setOnClickListener(listener);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode == REQUEST_CODE && resultCode == getActivity().RESULT_OK) {
             editTextWriteNameTown.setText(data.getStringExtra(TEXT));
-            CBT = Boolean.parseBoolean(data.getStringExtra(BOOL_CBT));
-            CBW = Boolean.parseBoolean(data.getStringExtra(BOOL_CBW));
-            SAP = Boolean.parseBoolean(data.getStringExtra(BOOL_SAP));
-
-            checkBoxTemperature.setChecked(CBT);
-            checkBoxWind.setChecked(CBW);
-            switchAtmospherePressure.setChecked(SAP);
+            cbt = Boolean.parseBoolean(data.getStringExtra(BOOL_CBT));
+            cbw = Boolean.parseBoolean(data.getStringExtra(BOOL_CBW));
+            sap = Boolean.parseBoolean(data.getStringExtra(BOOL_SAP));
+            checkBoxTemperature.setChecked(cbt);
+            checkBoxWind.setChecked(cbw);
+            switchAtmospherePressure.setChecked(sap);
         }
     }
 
@@ -101,16 +110,16 @@ public class CitiesListFragment extends Fragment {
         switch (view.getId()) {
             case R.id.checkBoxTemperature:
                 if (checkedBox) {
-                    CBT = true;
+                    cbt = true;
                 } else {
-                    CBT = false;
+                    cbt = false;
                 }
                 break;
             case R.id.checkBoxWind:
                 if (checkedBox) {
-                    CBW = true;
+                    cbw = true;
                 } else {
-                    CBW = false;
+                    cbw = false;
                 }
                 break;
         }
@@ -121,11 +130,23 @@ public class CitiesListFragment extends Fragment {
         switch (view.getId()) {
             case R.id.switchAtmospherePressure:
                 if (checkedSwitch) {
-                    SAP = true;
+                    sap = true;
                 } else {
-                    SAP = false;
+                    sap = false;
                 }
                 break;
         }
     }
+
+    private final View.OnClickListener listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (startSecondActivity == null){
+                startSecondActivity = new StartSecondActivity(getActivity());
+            } else {
+                startSecondActivity.onClickToThird(v);
+            }
+
+        }
+    };
 }
